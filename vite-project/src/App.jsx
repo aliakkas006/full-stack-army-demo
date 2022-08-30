@@ -1,220 +1,139 @@
-import TaskCard from './components/TaskCard';
+/**
+ * Done: handle user input fields
+ * Done: handle operations
+ * Done: handle a list of histories
+ * Done: render history list
+ * restore the history
+ */
 
-const tasks = [
-  {
-    id: 'unique_id_001',
-    subtitle: 'subtitle',
-    createdAt: '2022-08-21T12:16:24.420Z',
-    tags: [
-      {
-        id: 'tag_id_001',
-        text: "It's Done",
-        icon: 'T',
-      },
-      {
-        id: 'tag_id_002',
-        text: "It's Cancelled",
-        icon: 'X',
-      },
-    ],
-    comments: [
-      {
-        id: 'comment_id_001',
-        user: {
-          id: 'user_id_001',
-          name: 'Ali',
-          avatar: 'xyz.com',
-        },
-        text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio dolores, rerum ex veritatis ullam exercitationem quasi assumenda rem. Excepturi quasi assumenda ab officiis perspiciatis commodi praesentium maiores, vitae est magnam!',
-      },
-    ],
-    tasks: [
-      {
-        id: 'task_id_001',
-        title: 'Foggy Nelson',
-        text: 'Here to clean the streets of hells kitchen',
-        status: 'done',
-      },
-      {
-        id: 'task_id_002',
-        title: 'Louis CK',
-        text: 'This one cancelled',
-        status: 'done',
-      },
-      {
-        id: 'task_id_003',
-        title: 'Albert Einstein',
-        text: 'In progress',
-        status: 'progres',
-      },
-      {
-        id: 'task_id_004',
-        title: 'Albert Einstein',
-        text: 'In progress',
-        status: 'progres',
-      },
-    ],
-  },
-  {
-    id: 'unique_id_002',
-    subtitle: 'subtitle',
-    createdAt: '2022-08-21T12:16:24.420Z',
-    tags: [
-      {
-        id: 'tag_id_001',
-        text: "It's Done",
-        icon: 'T',
-      },
-      {
-        id: 'tag_id_002',
-        text: "It's Cancelled",
-        icon: 'X',
-      },
-      {
-        id: 'tag_id_003',
-        text: "It's In Progress",
-        icon: 'P',
-      },
-      {
-        id: 'tag_id_004',
-        text: 'Just wrote this',
-        icon: 'O',
-      },
-    ],
-    comments: [],
-    tasks: [
-      {
-        id: 'task_id_001',
-        title: 'Foggy Nelson',
-        text: 'Here to clean the streets of hells kitchen',
-        status: 'done',
-      },
-      {
-        id: 'task_id_002',
-        title: 'Louis CK',
-        text: 'This one cancelled',
-        status: 'cancelled',
-      },
-    ],
-  },
-  {
-    id: 'unique_id_003',
-    subtitle: 'subtitle',
-    createdAt: '2022-08-21T12:16:24.420Z',
-    tags: [
-      {
-        id: 'tag_id_001',
-        text: "It's Done",
-        icon: 'T',
-      },
-      {
-        id: 'tag_id_002',
-        text: "It's Cancelled",
-        icon: 'X',
-      },
-      {
-        id: 'tag_id_003',
-        text: "It's In Progress",
-        icon: 'P',
-      },
-      {
-        id: 'tag_id_004',
-        text: 'Just wrote this',
-        icon: 'O',
-      },
-    ],
-    comments: [
-      {
-        id: 'comment_id_001',
-        user: {
-          id: 'user_id_001',
-          name: 'Ali',
-          avatar: 'xyz.com',
-        },
-        text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio dolores, rerum ex veritatis ullam exercitationem quasi assumenda rem. Excepturi quasi assumenda ab officiis perspiciatis commodi praesentium maiores, vitae est magnam!',
-      },
-      {
-        id: 'comment_id_002',
-        user: {
-          id: 'user_id_001',
-          name: 'Anis',
-          avatar: 'abc.com',
-        },
-        text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio dolores, rerum ex veritatis ullam exercitationem quasi assumenda rem. Excepturi quasi assumenda ab officiis perspiciatis commodi praesentium maiores, vitae est magnam!',
-      },
-    ],
-    tasks: [
-      {
-        id: 'task_id_001',
-        title: 'Foggy Nelson',
-        text: 'Here to clean the streets of hells kitchen',
-        status: 'done',
-      },
-    ],
-  },
-  {
-    id: 'unique_id_004',
-    subtitle: 'subtitle',
-    createdAt: '2022-08-21T12:16:24.420Z',
-    tags: [
-      {
-        id: 'tag_id_001',
-        text: "It's Done",
-        icon: 'T',
-      },
-    ],
-    comments: [
-      {
-        id: 'comment_id_001',
-        user: {
-          id: 'user_id_001',
-          name: 'Ali',
-          avatar: 'xyz.com',
-        },
-        text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio dolores, rerum ex veritatis ullam exercitationem quasi assumenda rem. Excepturi quasi assumenda ab officiis perspiciatis commodi praesentium maiores, vitae est magnam!',
-      },
-    ],
-    tasks: [],
-  },
-  {
-    id: 'unique_id_005',
-    subtitle: 'subtitle',
-    createdAt: '2022-08-21T12:16:24.420Z',
-    tags: [
-      {
-        id: 'tag_id_001',
-        text: "It's Done",
-        icon: 'T',
-      },
-    ],
-    comments: [
-      {
-        id: 'comment_id_001',
-        user: {
-          id: 'user_id_001',
-          name: 'Ali',
-          avatar: 'xyz.com',
-        },
-        text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio dolores, rerum ex veritatis ullam exercitationem quasi assumenda rem. Excepturi quasi assumenda ab officiis perspiciatis commodi praesentium maiores, vitae est magnam!',
-      },
-    ],
-    tasks: [
-      {
-        id: 'task_id_001',
-        title: 'Foggy Nelson',
-        text: 'Here to clean the streets of hells kitchen',
-        status: 'done',
-      },
-    ],
-  },
-];
+import { useState } from 'react';
+
+function* generateId() {
+  let id = 1;
+  while (true) {
+    yield id++;
+  }
+}
+
+const getId = generateId();
+
+const initialState = {
+  a: 0,
+  b: 0,
+};
 
 const App = () => {
+  const [inputState, setInputState] = useState({ ...initialState });
+  const [result, setResult] = useState(0);
+  const [histories, setHistories] = useState([]);
+  const [restoredHistory, setRestoredHistory] = useState(null);
+
+  const handleInputFields = (e) => {
+    setInputState({
+      ...inputState,
+      [e.target.name]: parseInt(e.target.value),
+    });
+  };
+
+  const handleArithmeticOps = (operation) => {
+    if (!(inputState.a || inputState.b)) return alert('Invalid input!');
+
+    const f = new Function(
+      'operation',
+      `
+        return ${inputState.a} ${operation} ${inputState.b}
+      `
+    );
+
+    const result = f(operation);
+    setResult(result);
+
+    const history = {
+      id: getId.next().value,
+      inputs: inputState,
+      operation,
+      result,
+      date: new Date(),
+    };
+
+    setHistories([history, ...histories]);
+  };
+
+  const handleClearOps = () => {
+    setInputState({ ...initialState });
+    setResult(0);
+    setHistories([]);
+  };
+
+  const handleRestoreBin = (historyItem) => {
+    setInputState({ ...historyItem.inputs });
+    setResult(historyItem.result);
+    setRestoredHistory(historyItem.id);
+  };
+
   return (
-    <div className="cards-group">
-      {tasks.map((task) => (
-        <TaskCard key={task.id} task={task} />
-      ))}
+    <div style={{ width: '50%', margin: '0 auto' }}>
+      <h1>Result: {result} </h1>
+      <div>
+        <h3>Inpusts</h3>
+        <input
+          type="number"
+          name="a"
+          value={inputState.a}
+          onChange={handleInputFields}
+        />
+        <input
+          type="number"
+          name="b"
+          value={inputState.b}
+          onChange={handleInputFields}
+        />
+      </div>
+
+      <div>
+        <p>Operations:</p>
+        <button onClick={() => handleArithmeticOps('+')}>+</button>
+        <button onClick={() => handleArithmeticOps('-')}>-</button>
+        <button onClick={() => handleArithmeticOps('*')}>*</button>
+        <button onClick={() => handleArithmeticOps('/')}>/</button>
+        <button onClick={() => handleArithmeticOps('%')}>%</button>
+        <button onClick={handleClearOps}>clear</button>
+      </div>
+
+      <div>
+        <p>History</p>
+        {histories.length ? (
+          <ul>
+            {histories.map((item) => (
+              <li key={item.id}>
+                <p>
+                  Operation: {item.inputs.a} {item.operation} {item.inputs.b},
+                  Result:
+                  {item.result}
+                </p>
+                <small>
+                  {' '}
+                  {item.date.toLocaleDateString()}{' '}
+                  {item.date.toLocaleTimeString()}{' '}
+                </small>
+                <br />
+                <button
+                  onClick={() => handleRestoreBin(item)}
+                  disabled={
+                    restoredHistory !== null && restoredHistory === item.id
+                  }
+                >
+                  Restore
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>
+            <small>There is no history</small>
+          </p>
+        )}
+      </div>
     </div>
   );
 };
