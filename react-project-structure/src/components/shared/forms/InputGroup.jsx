@@ -35,7 +35,11 @@ const InputGroup = ({
         id={name}
         value={value}
         placeholder={placeholder ?? ''}
-      ></TextInput>
+        error={error}
+        onChange={onChange}
+        onFocus={onFocus}
+        onBlur={onBlur}
+      />
 
       {error && <ErrorMessage>{error}</ErrorMessage>}
     </Container>
