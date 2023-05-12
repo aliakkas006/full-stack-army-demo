@@ -5,12 +5,12 @@ exports.randomGenController = (req, res) => {
       const startValue = parseInt(req.query.start);
       const endValue = parseInt(req.query.end);
       
-      res.json({
+      res.status(200).json({
         start: startValue,
         end: endValue,
         randomNum: generateRandom(startValue, endValue),
       });
-    } catch {
+    } catch(err) {
       res.status(422).json({
         message: 'Invalid data provided!',
         min: req.query.min,
