@@ -1,4 +1,4 @@
-const generatePerson = require('../algorithms/fake-profile');
+const generatePerson = require('../algorithms/fake-profile-gen');
 
 exports.fakeProfile = (req, res) => {
   try {

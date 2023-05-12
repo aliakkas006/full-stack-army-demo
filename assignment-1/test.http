@@ -1,1 +1,7 @@
-GET http://localhost:4000/api/v1/fake-profile-gen?name=fake-profile-generator&props[]=firstName&props[]=lastName&props[]=email&props[]=address
+GET http://localhost:4000/api/v1/count-chars?name=count-chars&str=Hello,Akkas@23
+
+
+# GET http://localhost:4000/api/v1/random-num-gen?name=random-num-generator&start=1&end=100
+
+
+# GET http://localhost:4000/api/v1/fake-profile-gen?name=fake-profile-generator&props[]=firstName&props[]=lastName&props[]=email&props[]=address
